@@ -1,7 +1,13 @@
 const express = require("express"); // imports express into our app
+const colors = require("colors");
 const dotenv = require("dotenv").config(); // allows us to have a .env file with our variables
 const port = process.env.PORT || 5000; // a variable to hold our port
+const connectDB = require("./config/db");
 const { errorHandler } = require("./middleware/errorMiddleware");
+
+// mongoose function to connect to database
+connectDB();
+
 // initializes a instance of our express app
 const app = express();
 
