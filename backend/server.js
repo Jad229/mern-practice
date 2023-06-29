@@ -15,8 +15,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// redirects request to the routes folder goalRoutes file
+// redirects request to the appropriate routes folder file
 app.use("/api/goals", require("./routes/goalRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 // overwrites the default express error handler
 app.use(errorHandler);
